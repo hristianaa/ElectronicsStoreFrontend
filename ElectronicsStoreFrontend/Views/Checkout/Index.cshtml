@@ -1,0 +1,47 @@
+﻿@model ElectronicsStoreFrontend.Models.CheckoutDto
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<h2 class="text-center">💳 Checkout</h2>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+
+<form asp-action="Index" method="post" class="w-50 mx-auto mt-4">
+    <div class="form-group mb-2">
+        <label>Full Name:</label>
+        <input asp-for="FullName" class="form-control" />
+    </div>
+    <div class="form-group mb-2">
+        <label>Address:</label>
+        <input asp-for="Address" class="form-control" />
+    </div>
+    <div class="form-group mb-2">
+        <label>City:</label>
+        <input asp-for="City" class="form-control" />
+    </div>
+    <div class="form-group mb-2">
+        <label>Postal Code:</label>
+        <input asp-for="PostalCode" class="form-control" />
+    </div>
+    <div class="form-group mb-2">
+        <label>Country:</label>
+        <input asp-for="Country" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label>Payment Method:</label>
+        <select asp-for="PaymentMethod" class="form-control">
+            <option value="">-- Choose --</option>
+            <option value="CreditCard">Credit Card</option>
+            <option value="PayPal">PayPal</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success w-100">Place Order</button>
+</form>

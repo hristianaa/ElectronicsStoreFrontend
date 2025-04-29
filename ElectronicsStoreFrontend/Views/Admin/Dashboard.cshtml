@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2 class="text-center">⚙️ Admin Dashboard</h2>
+
+<div class="row text-center mt-5">
+    <div class="col-md-4">
+        <a class="btn btn-outline-primary w-100" asp-controller="Product" asp-action="Index">Manage Products</a>
+    </div>
+    <div class="col-md-4">
+        <a class="btn btn-outline-success w-100" asp-controller="User" asp-action="Profile">View User Orders</a>
+    </div>
+    <div class="col-md-4">
+        <a class="btn btn-outline-warning w-100" asp-controller="Order" asp-action="Confirmation">Recent Orders</a>
+    </div>
+</div>
