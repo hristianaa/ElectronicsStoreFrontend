@@ -16,7 +16,7 @@ namespace ElectronicsStoreFrontend.Controllers
         {
             _httpClient = new HttpClient
             {
-                BaseAddress = new Uri("https://onlineelectronicsstoresolution.onrender.com/api/")
+                BaseAddress = new Uri(AppProps.BASE_URL)
             };
         }
 

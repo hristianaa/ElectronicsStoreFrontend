@@ -14,7 +14,9 @@ namespace ElectronicsStoreFrontend.Controllers
         {
             _httpClient = new HttpClient
             {
-                BaseAddress = new Uri("https://onlineelectronicsstoresolution.onrender.com/api/")
+                //BaseAddress = new Uri(AppProps.BASE_URL)
+                BaseAddress = new Uri(AppProps.BASE_URL)
+
             };
         }
 
@@ -30,7 +32,7 @@ namespace ElectronicsStoreFrontend.Controllers
             var json = JsonSerializer.Serialize(login);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("auth/login", content);
+            var response = await _httpClient.PostAsync("/auth/login", content);
 
             if (response.IsSuccessStatusCode)
             {
